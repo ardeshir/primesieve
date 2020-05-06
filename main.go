@@ -19,7 +19,7 @@ func Filter(src <-chan int, dst chan<- int, prime int) {
 func main() {
 	src := make(chan int)      // Create new channel.
 	go Generate(src)           // Launch Generic goroutine.
-	for i := 0; 1 < 100; i++ { // Find 100 primes
+	for i := 0; i < 100; i++ { // Find 100 primes
 		prime := <-src
 		fmt.Println(prime)
 		dst := make(chan int)
